@@ -1,0 +1,35 @@
+(executable
+ (name record))
+
+(executable
+ (name tuple))
+
+(executable
+ (name pm))
+
+(executable
+ (name type_synonym))
+
+(executable
+ (name option))
+
+(executable
+ (name association_list))
+
+(executable
+ (name algebraic_data_types))
+
+(executable
+ (name exception)
+ (libraries ounit2))
+
+(executable
+ (name tree))
+
+(executable
+ (name nat))
+
+(executable
+ (name ex)
+ (libraries ounit2)
+ (flags (:standard -w -27-32-39)))
