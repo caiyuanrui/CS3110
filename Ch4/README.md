@@ -162,3 +162,25 @@ let fold_left f acc = function
 - They combine list elements in opposite orders, as indicated by their names. Function fold_right combines from the right to the left, whereas fold_left proceeds from the left to the right.
 - Function fold_left is tail recursive whereas fold_right is not.
 - The types of the functions are different. In fold_X the accumulator argument goes to the X of the list argument. That is a choice made by the standard library rather than a necessary implementation difference.
+
+## [Currying](./curry.ml)
+
+- Curried function: `'a -> 'b -> 'c`
+- Uncurried function: `'a * 'b -> 'c`
+
+The way to convert between both of them:
+
+```ocaml
+let add x y = x + y
+let add' t = fst t + snd t
+
+(** [curry] takes an uncurried function and returns a curried function *)
+let curry f x y = f (x, y)
+
+(** [uncurry] takes a curried function and returns an uncurried function *)
+let uncurry f (x, y) = f x y
+
+let curried_add = curry add'
+let uncurried_add = uncurry add
+
+```
