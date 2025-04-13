@@ -18,3 +18,9 @@
 
 (executable
  (name curry))
+
+(executable
+ (name ex)
+ (libraries ounit2)
+ (flags
+  (:standard -w -27-32-39)))
