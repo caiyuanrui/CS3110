@@ -12,3 +12,6 @@
 
 (executable
  (name tree))
+
+(executable
+ (name pipeline))
