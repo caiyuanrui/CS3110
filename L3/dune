@@ -32,4 +32,5 @@
 (executable
  (name ex)
  (libraries ounit2)
- (flags (:standard -w -27-32-39)))
+ (flags
+  (:standard -w -27-32-39)))
