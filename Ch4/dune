@@ -6,3 +6,6 @@
 
 (executable
  (name filter))
+
+(executable
+ (name fold))

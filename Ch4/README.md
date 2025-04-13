@@ -100,3 +100,65 @@ let filter p =
   in
   filter_aux []
 ```
+
+## [Fold](./fold.ml)
+
+### Combine
+
+```ocaml
+let rec combine op init = function
+  | [] -> init
+  | h :: t -> op h (combine op init t)
+```
+
+### Fold Right
+
+```ocaml
+let rec fold_right f lst acc =
+  match lst with [] -> acc | h :: t -> f h (fold_right f t acc)
+```
+
+The `fold_right` folds in elements of the list from right to left.
+For example, `fold_right ( + ) [1; 2; 3] 0` results in `1 + (2 + (3 + 0))`.
+The paratheses associate from right to left.
+
+### Tail Recursion and Combine
+
+```ocaml
+let rec combine_tr f acc = function
+  | [] -> acc
+  | h :: t -> combine_tr f (f acc h) t (* Not the order of [acc] and [h] *)
+```
+
+If we execute the following code snappet:
+
+```ocaml
+let s = combine ( - ) 0 [3; 2; 1]
+let s' = combine_tr ( - ) 0 [3; 2; 1]
+```
+
+We will get
+
+```ocaml
+var s : int = 2;
+var s' : int = -6;
+```
+
+- With `combine` we compute `(3 - (2 - (1 - 0)))`
+- WIth `combine_tr` we compute `(((0 - 3) - 2) - 1)`
+
+### Fold Left
+
+In fact, the `combine_tr` is the `fold_left` we need.
+
+```ocaml
+let fold_left f acc = function
+  | [] -> acc
+  | h :: t -> fold_left f (f acc h) t
+```
+
+### Fold Left vs. Fold Right
+
+- They combine list elements in opposite orders, as indicated by their names. Function fold_right combines from the right to the left, whereas fold_left proceeds from the left to the right.
+- Function fold_left is tail recursive whereas fold_right is not.
+- The types of the functions are different. In fold_X the accumulator argument goes to the X of the list argument. That is a choice made by the standard library rather than a necessary implementation difference.
