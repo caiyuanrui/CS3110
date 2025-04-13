@@ -9,3 +9,6 @@
 
 (executable
  (name fold))
+
+(executable
+ (name tree))
