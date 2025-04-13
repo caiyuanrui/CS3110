@@ -81,3 +81,22 @@ let rev_map f =
 
 let map f lst = lst |> rev_map f |> List.rev
 ```
+
+## [Filter](./filter.ml)
+
+```ocaml
+let rec filter p = function
+  | [] -> []
+  | h :: t -> if p h then h :: filter p t else filter p t
+```
+
+### Tail Recursion
+
+```ocaml
+let filter p =
+  let rec filter_aux acc = function
+    | [] -> List.rev acc
+    | h :: t ->  if p h then filter_aux (h :: acc) t else filter_aux acc t
+  in
+  filter_aux []
+```
