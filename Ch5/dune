@@ -1,0 +1,4 @@
+(executable
+ (name adt)
+ (flags
+  (:standard -w -27-32-39)))
