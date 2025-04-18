@@ -2,3 +2,23 @@
  (name adt)
  (flags
   (:standard -w -27-32-39)))
+
+(executable
+ (name stack)
+ (flags
+  (:standard -w -27-32-39)))
+
+(executable
+ (name queue)
+ (flags
+  (:standard -w -27-32-39)))
+
+(executable
+ (name map)
+ (flags
+  (:standard -w -27-32-39)))
+
+  (executable
+   (name set)
+   (flags
+    (:standard -w -27-32-39)))
