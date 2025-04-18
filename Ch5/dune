@@ -18,7 +18,12 @@
  (flags
   (:standard -w -27-32-39)))
 
-  (executable
-   (name set)
-   (flags
-    (:standard -w -27-32-39)))
+(executable
+ (name set)
+ (flags
+  (:standard -w -27-32-39)))
+
+(executable
+ (name ring)
+ (flags
+  (:standard -w -27-32-39)))
