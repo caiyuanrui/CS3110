@@ -1,0 +1,14 @@
+(executable
+ (name mlist))
+
+(executable
+ (name fact))
+
+(executable
+ (name ptr))
+
+(executable
+ (name struct))
+
+(executable
+ (name arr))

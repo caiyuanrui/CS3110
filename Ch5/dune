@@ -14,7 +14,7 @@
   (:standard -w -27-32-39)))
 
 (executable
- (name map)
+ (name mymap)
  (flags
   (:standard -w -27-32-39)))
 
@@ -25,5 +25,20 @@
 
 (executable
  (name ring)
+ (flags
+  (:standard -w -27-32-39)))
+
+(executable
+ (name functor)
+ (flags
+  (:standard -w -27-32-39)))
+
+(executable
+ (name std_map)
+ (flags
+  (:standard -w -27-32-39)))
+
+(executable
+ (name ex)
  (flags
   (:standard -w -27-32-39)))

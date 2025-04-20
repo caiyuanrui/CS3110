@@ -22,7 +22,7 @@ end
 
 let two : IntRing.t = IntRing.(one + one)
 
-module IntRing : Ring with type t = int = struct
+module IntRing' : Ring with type t = int = struct
   type t = int
 
   let zero = 0
@@ -33,4 +33,4 @@ module IntRing : Ring with type t = int = struct
   let to_string = string_of_int
 end
 
-let two : int = IntRing.(one + one)
+let two : int = IntRing'.(one + one)
