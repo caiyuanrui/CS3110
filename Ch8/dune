@@ -21,3 +21,8 @@
  (name mem)
  (flags
   (:standard -w -27-32-39)))
+
+(executable
+ (name arr)
+ (flags
+  (:standard -w -27-32-39)))
