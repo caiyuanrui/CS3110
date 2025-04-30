@@ -1,0 +1,23 @@
+(executable
+ (name ht))
+
+(executable
+ (name bst))
+
+(executable
+ (name rbt))
+
+(executable
+ (name seq)
+ (flags
+  (:standard -w -27-32-39)))
+
+(executable
+ (name laziness)
+ (flags
+  (:standard -w -27-32-39)))
+
+(executable
+ (name mem)
+ (flags
+  (:standard -w -27-32-39)))
