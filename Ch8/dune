@@ -26,3 +26,14 @@
  (name arr)
  (flags
   (:standard -w -27-32-39)))
+
+(executable
+ (name promise)
+ (libraries lwt.unix)
+ (flags
+  (:standard -w -27-32-39)))
+
+(executable
+ (name monad)
+ (flags
+  (:standard -w -27-32-39)))
